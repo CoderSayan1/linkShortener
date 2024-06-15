@@ -90,7 +90,7 @@ export default function Signup() {
                   <input
                     className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                     type="password"
-                    placeholder="Password"
+                    placeholder="Enter min. six length password"
                     id="password"
                     onChange={(e) => setPassword(e.target.value)}
                   ></input>
