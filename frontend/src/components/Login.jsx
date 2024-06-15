@@ -25,7 +25,13 @@ export default function Login() {
             window.localStorage.setItem("name",response.data.fullName)
             // window.localStorage.removeItem("id")
             // navigate('/');
-            if (response.data._id){
+            if(response.data._id === undefined){
+              navigate('/login')
+              window.localStorage.removeItem("id")
+              window.localStorage.removeItem("name")
+              toast.error("User not found");
+            }
+            else{
               navigate('/');
               toast.success("Logged in successfully")
             } 
