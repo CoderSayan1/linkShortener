@@ -6,12 +6,11 @@ const handleNewShortUrl = async (req, res) => {
     console.log("The original url is: ", req.body.originalUrl);
     const { originalUrl } = req.body;
     const { userid } = req.body;
-    const urlFound = await URL.find({
-      originalUrl,
-    });
+    const urlFound = await URL.find()
+      .where('originalUrl').equals(originalUrl)
+      .where('user').equals(userid);
     if (urlFound.length > 0) {
-      res.status(409); // If the same url is present in DB then it shows
-      res.send(urlFound);
+      res.send({status:404, message:"Duplicate url"}); // If the same url is present in DB then it shows
     } else {
       const shortUrl = await URL.create({
         originalUrl,
