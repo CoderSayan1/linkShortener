@@ -20,9 +20,14 @@ export default function SearchBox() {
         originalUrl: originalUrl,
         userid: session,
       });
-      setShortUrl(response.data);
-      toast.success("Link created");
-      setOriginalUrl("");
+      if (response.data.status===404) {
+        toast.error(response.data.message);
+      }
+      else {
+        setShortUrl(response.data);
+        toast.success("Link created");
+        setOriginalUrl("");
+      }
     } catch (error) {
       console.log(error);
     }
