@@ -1,1 +1,1 @@
-export const serverUrl = process.env.SERVER_URL
+export const serverUrl = "https://linkshortner-295i.onrender.com/api"
