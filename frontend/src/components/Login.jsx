@@ -25,12 +25,19 @@ export default function Login() {
             window.localStorage.setItem("name",response.data.fullName)
             // window.localStorage.removeItem("id")
             // navigate('/');
+<<<<<<< HEAD
             // console.log(response.data._id);
+=======
+>>>>>>> 2af27410e4819ada8bd71fec22635dd545e581de
             if(response.data._id === undefined){
               navigate('/login')
               window.localStorage.removeItem("id")
               window.localStorage.removeItem("name")
+<<<<<<< HEAD
               toast.error("Invalid Credentials");
+=======
+              toast.error("User not found");
+>>>>>>> 2af27410e4819ada8bd71fec22635dd545e581de
             }
             else{
               navigate('/');
