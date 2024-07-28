@@ -1,1 +1,1 @@
-export const serverUrl = "https://linkshortner-295i.onrender.com/api"
+export const serverUrl = "https://linkshortener-let3.onrender.com/api"
