@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json()) 
 app.use(express.urlencoded({extended: true}));
 app.use(cors({
-    origin: process.env.ORIGIN,
+    origin: "https://link-shortner-ochre.vercel.app",
     credentials: true
 }))
 app.use(cookieParser())
